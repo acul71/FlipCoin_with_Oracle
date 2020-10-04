@@ -3,7 +3,7 @@
 A simple bet game with solidity using an Oracle (provableAPI.sol) for randomness
 You bet some ether and you can loose all or double the stake.
 You can see a demo video here: 
-https://github.com/acul71/FlipCoin_with_Oracle/video/FlipCoinOracleDemo.ogv
+https://github.com/acul71/FlipCoin_with_Oracle/video/
 
 You have to edit the truffle-config.js file and create a .secret text file in the root directory of the project with the Metamask seed to make it work!
 The solidity contracts are in the contracts directory
