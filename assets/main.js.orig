@@ -1,0 +1,51 @@
+var web3 = new Web3(Web3.givenProvider)
+var contractInstance
+
+
+$(document).ready(function() {
+    console.log("In ready function!")
+    window.ethereum.enable().then( accounts => {
+        //contractInstance = new web3.eth.Contract(abi, address, addressinjson)        
+        contractInstance = new web3.eth.Contract(abi, "0x581101d0622E110CB89f86364C00EE0277f48604", {from: accounts[0]})
+        console.log("contractInstance=", contractInstance)
+    })
+    $("#add_data_button").click(inputData)
+    $("#get_data_button").click(showData)
+
+    function inputData() {
+        let name = $("#name_input").val()
+        let age = $("#age_input").val()
+        let height = $("#height_input").val()
+
+        let config = {
+            value: web3.utils.toWei("1", "ether")
+        }
+
+        contractInstance.methods.createPerson(name, age, height).send(config)
+        .on("transactionHash", hash => {
+            console.log("Hash=", hash)
+        })
+        .on("confirmation", confirmationNr => {
+            // 12 confirmation is the raccomanded confirmation number
+            //if(confirmationNr > 12)
+            console.log("confirmationNr=", confirmationNr)
+        })
+        .on("receipt", receipt => {
+            console.log("Receipt=", receipt)
+            alert("Dones")
+        })
+    }
+
+    function showData() {
+        contractInstance.methods.getPerson().call().then( res => {
+            console.log("res=", res)
+
+            $("#name_output").text(res.name)
+            $("#age_output").text(res.age)
+            $("#height_output").text(res.height)
+
+        })
+    }
+
+})
+

@@ -1,0 +1,4 @@
+.secret
+truffle-config.js
+tmp/
+node_modules

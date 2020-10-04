@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/flipcss.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <title>Flip a coin</title>
+  </head>
+  <body>
+    <div class="d-flex align-items-center justify-content-center mt-4">
+      <h1>Flip a coin</h1>
+    </div>
+    <div class="d-flex align-items-center justify-content-center mt-4">
+      <img src="assets/img/gold-coin-pot2.png" alt="money gold pot image">
+    </div>
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <h2>Pot: <span id="pot"></span></h2>
+    </div>
+    <form id="betForm">
+      <div class="d-flex align-items-center justify-content-center mt-4">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineCoinRadioOptions" id="radioHead" value="0" checked>
+          <label class="form-check-label" for="inlineRadio1">Head</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineCoinRadioOptions" id="radioTail" value="1">
+          <label class="form-check-label" for="inlineRadio2">Tail</label>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <div class="input-group mb-3" style="width: 22%">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Bet: </span>
+          </div>
+          <input type="number" value="0.01" class="form-control" aria-label="Bet" aria-describedby="inputGroup-sizing-default" id="bet">
+          <div class="input-group-append">
+            <span class="input-group-text"> ether</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <button type="button" class="btn btn-primary" id="bet-btn">BET!</button>
+      </div>
+    </form>
+    
+    <div class="d-flex align-items-center justify-content-center mt-5">
+      <h3>2-1 odds. Head or Tail? Make your bet!</h3>
+    </div>
+    <form>
+      <label class="d-flex align-items-center justify-content-center mt-2 mb-0" for="messages">Messages</label>
+      <div class="form-group ml-5 mr-5 d-flex align-items-center justify-content-center mt-0">
+        <textarea class="form-control form-control-sm col-8" id="messages" rows="7"  readonly></textarea>
+      </div>
+    </form>
+
+    <div id="my-alert" class="d-flex align-items-center justify-content-center mt-2"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- Contract -->
+    <script type="text/javascript" src="assets/web3.min.js"></script>
+    <script type="text/javascript" src="assets/abi.js"></script>
+    <script type="text/javascript" src="assets/main.js"></script>
+    <script type="text/javascript" src="assets/luxon.min.js"></script>
+    <script type="text/javascript" src="assets/util.js"></script>
+  </body>
+</html>
