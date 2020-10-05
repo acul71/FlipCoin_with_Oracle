@@ -16,7 +16,9 @@ $(document).ready(function() {
         contractInstance.events.betResult( (error,res) => {
             if(error) {
                 console.log("error=", error)
-                myAlert(`Error: ${error}`, "alert-danger", 5000)
+                msg = `Error: ${error}`
+                myAlert(msg, "alert-danger", 5000)
+                textareaAdd(msg)
             } else {
                 console.log("betResult res=", res)
                 const win = res.returnValues.value
